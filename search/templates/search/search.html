@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Search YouTube</title>
+
+    <!-- Bootstrap core CSS -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+	<main role="main">
+
+  <section class="jumbotron text-center">
+    <div class="container">
+      <h1 class="jumbotron-heading">Search YouTube</h1>
+      <p class="lead text-muted">Get the top suggested keywords on YouTube for your query!</p>
+      <form method="post">
+        {% csrf_token %}
+      <div class="input-group mb-3">
+        <input name="query" type="text" class="form-control" aria-label="Username">
+      </div>
+      <p>
+        <button type="submit" class="btn btn-primary my-2">Search</button>
+      </p>
+    </form>
+    </div>
+  </section>
+
+  <p style="text-align: center;">
+      {% for item in b %}
+      <span>{{item.0}}</span><br>
+      {%endfor%}
+  </p>
+
+</body>
+</html>

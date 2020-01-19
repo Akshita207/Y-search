@@ -1,0 +1,1 @@
+web: gunicorn y_search.wsgi --log-file -
